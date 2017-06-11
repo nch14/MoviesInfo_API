@@ -4,10 +4,7 @@ import cn.chenhaonee.movies.domian.Movies;
 import cn.chenhaonee.movies.domian.MoviesShorcut;
 import cn.chenhaonee.movies.vo.ResponseData;
 import io.swagger.annotations.Api;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,12 +13,12 @@ import java.util.List;
  * Created by chenhaonee on 2017/6/9.
  */
 @CrossOrigin
-@Api(value = "风机数据", description = "")
+@Api(value = "电影信息", description = "")
 @RequestMapping(value = "/movie")
 @RestController
 public class MovieController {
 
-    @RequestMapping(value = "/all")
+    @RequestMapping(value = "/all",method = RequestMethod.GET)
     public ResponseData<List<MoviesShorcut>> getAllRecentMovies() {
         //stub
         List<MoviesShorcut> list = new ArrayList<>();
@@ -30,12 +27,12 @@ public class MovieController {
         return new ResponseData<>(list);
     }
 
-    @RequestMapping(value = "/{id}")
+    @RequestMapping(value = "/{id}",method = RequestMethod.GET)
     public ResponseData<Movies> getMovieInfo(@PathVariable(value = "id") String id) {
         //stub
         if (id == "1") {
             return new ResponseData<>(new Movies("1",
-                    "神奇女侠",
+                    "新木乃伊",
                     "7",
                     "8",
                     "9",
@@ -47,7 +44,7 @@ public class MovieController {
                     "2017-06-02上映",
                     "亚马逊公主戴安娜·普林斯（盖尔·加朵 Gal Gadot 饰），经过在家乡天堂岛的训练，取得上帝赐予的武器 与装备，化身神奇女侠，与空军上尉史蒂夫·特雷弗（克里斯·派恩 Chris Pine 饰）一同来到人类世界，一起捍卫和平、拯救世界，在一战期间上演了震撼人心的史诗传奇。"));
         } else {
-            return new ResponseData<>(new Movies("1",
+            return new ResponseData<>(new Movies("2",
                     "神奇女侠",
                     "7",
                     "8",
