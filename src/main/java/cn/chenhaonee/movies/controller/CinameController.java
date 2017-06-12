@@ -52,8 +52,8 @@ public class CinameController {
                                                      @RequestParam(value = "area")String area) {
         //stub
         List<Cinemas> cinemas = new ArrayList<>();
-        cinemas.add(new Cinemas("1","荣耀影院","召唤师峡谷002号","7","8","9"));
-        cinemas.add(new Cinemas("2","联盟影院","召唤师峡谷001号","7","8","9"));
+        cinemas.add(new Cinemas("1","荣耀影院","召唤师峡谷002号","18388633386","70"));
+        cinemas.add(new Cinemas("2","联盟影院","召唤师峡谷001号","18388633386","70"));
         return new ResponseData<>(cinemas);
     }
 
