@@ -176,7 +176,8 @@ public class NuomiDao {
             String length = item.getString("length");
             String time = item.getString("time");
             String content = item.getString("content");
-            Movies movies = new Movies(null, name, marks, null, null, des, director, roles, country, length, time, content,"");
+            String url = item.getString("url");
+            Movies movies = new Movies(null, name, marks, "暂无数据", "暂无数据", des, director, roles, country, length, time, content, url);
             return movies;
         }
         return null;
@@ -231,7 +232,7 @@ public class NuomiDao {
         String startAt = sdf.format(new Date(startTime));
         String endAt = sdf.format(new Date(endTime));
 
-        CinemaMovieItem cinemaMovieItem = new CinemaMovieItem(startAt, endAt, language, theaterName, "" + rate,totalSeatNumber,remainedSeatNumber,version, "" + price, "" + originalPrice, null, null, null, null);
+        CinemaMovieItem cinemaMovieItem = new CinemaMovieItem(startAt, endAt, language, theaterName, "" + rate, totalSeatNumber, remainedSeatNumber, version, "" + price, "" + originalPrice, null, null, null, null);
         return cinemaMovieItem;
     }
 
