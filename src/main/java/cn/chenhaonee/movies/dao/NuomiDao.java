@@ -231,7 +231,7 @@ public class NuomiDao {
         String startAt = sdf.format(new Date(startTime));
         String endAt = sdf.format(new Date(endTime));
 
-        CinemaMovieItem cinemaMovieItem = new CinemaMovieItem(startAt, endAt, language, theaterName, "" + rate, "" + price, "" + originalPrice, null, null, null, null);
+        CinemaMovieItem cinemaMovieItem = new CinemaMovieItem(startAt, endAt, language, theaterName, "" + rate,totalSeatNumber,remainedSeatNumber,version, "" + price, "" + originalPrice, null, null, null, null);
         return cinemaMovieItem;
     }
 

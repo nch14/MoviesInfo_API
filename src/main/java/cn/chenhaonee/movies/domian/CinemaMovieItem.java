@@ -9,6 +9,9 @@ public class CinemaMovieItem {
     private String language;
     private String roomName;
     private String seatsNow;
+    private int seatTotal;
+    private int seatNowAvailable;
+    private String version;
     private String priceInNuomi;
     private String priceOriginInNuomi;
 
@@ -20,12 +23,15 @@ public class CinemaMovieItem {
     public CinemaMovieItem() {
     }
 
-    public CinemaMovieItem(String startAt, String endAt, String language, String roomName, String seatsNow, String priceInNuomi, String priceOriginInNuomi, String priceInMaoyan, String priceOriginInMaoyan, String priceInTaopiaopiao, String priceOriginInTaopiaopiao) {
+    public CinemaMovieItem(String startAt, String endAt, String language, String roomName, String seatsNow, int seatTotal, int seatNowAvailable, String version, String priceInNuomi, String priceOriginInNuomi, String priceInMaoyan, String priceOriginInMaoyan, String priceInTaopiaopiao, String priceOriginInTaopiaopiao) {
         this.startAt = startAt;
         this.endAt = endAt;
         this.language = language;
         this.roomName = roomName;
         this.seatsNow = seatsNow;
+        this.seatTotal = seatTotal;
+        this.seatNowAvailable = seatNowAvailable;
+        this.version = version;
         this.priceInNuomi = priceInNuomi;
         this.priceOriginInNuomi = priceOriginInNuomi;
         this.priceInMaoyan = priceInMaoyan;
@@ -121,5 +127,29 @@ public class CinemaMovieItem {
 
     public void setPriceOriginInTaopiaopiao(String priceOriginInTaopiaopiao) {
         this.priceOriginInTaopiaopiao = priceOriginInTaopiaopiao;
+    }
+
+    public int getSeatTotal() {
+        return seatTotal;
+    }
+
+    public void setSeatTotal(int seatTotal) {
+        this.seatTotal = seatTotal;
+    }
+
+    public int getSeatNowAvailable() {
+        return seatNowAvailable;
+    }
+
+    public void setSeatNowAvailable(int seatNowAvailable) {
+        this.seatNowAvailable = seatNowAvailable;
+    }
+
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
     }
 }
