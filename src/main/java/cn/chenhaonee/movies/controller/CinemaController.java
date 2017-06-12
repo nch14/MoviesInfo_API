@@ -62,9 +62,11 @@ public class CinemaController {
     @ApiOperation(value = "获得指定影片影院列表", notes = "date以及area请按照服务端返回的值作为参数进行请求")
     public ResponseData<List<Cinemas>> getCinemaList(@RequestParam(value = "movieId") String movieId,
                                                      @RequestParam(value = "date") String date,
+                                                     @RequestParam(value = "pageSize", required = false, defaultValue = "6") String pageSize,
+                                                     @RequestParam(value = "pageNum", required = false, defaultValue = "0") String pageNum,
                                                      @RequestParam(value = "areaId") String areaId) {
         String dateDecoded = DateCode.toMyDate(date);
-        List<Cinemas> cinemas = cinemaService.getCinemaList(movieId, dateDecoded, areaId);
+        List<Cinemas> cinemas = cinemaService.getCinemaList(movieId, pageSize, pageNum, dateDecoded, areaId);
         return new ResponseData<>(cinemas);
     }
 

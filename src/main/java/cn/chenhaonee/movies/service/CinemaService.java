@@ -26,8 +26,8 @@ public class CinemaService {
         return nuomiDao.getAreaList(movieId);
     }
 
-    public List<Cinemas> getCinemaList(String movieId, String date, String areaId) {
-        return nuomiDao.getCinemaList(movieId, date, areaId);
+    public List<Cinemas> getCinemaList(String movieId, String pageSize, String pageNum, String date, String areaId) {
+        return nuomiDao.getCinemaList(movieId, pageSize, pageNum, date, areaId);
     }
 
     public List<CinemaMovieItem> getMovieItemList(String movieId, String date, String cinemaId) {

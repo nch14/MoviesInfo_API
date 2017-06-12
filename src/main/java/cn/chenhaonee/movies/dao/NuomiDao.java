@@ -91,8 +91,8 @@ public class NuomiDao {
         return null;
     }
 
-    public List<Cinemas> getCinemaList(String movieId, String date, String area) {
-        String url = this.url + "/cinema/cinemaList?movieId=" + movieId + "&date=" + date + "&cityId=" + 315 + "&areaId=" + area;
+    public List<Cinemas> getCinemaList(String movieId, String pageSize, String pageNum, String date, String area) {
+        String url = this.url + "/cinema/cinemaList?movieId=" + movieId + "&date=" + date + "&cityId=" + 315 + "&areaId=" + area + "&pageSize=" + pageSize + "&pageNum" + pageNum;
         Request request = new Request.Builder().url(url).build();
         Response response = null;
         try {

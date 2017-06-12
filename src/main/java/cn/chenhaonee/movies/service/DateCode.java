@@ -10,7 +10,7 @@ public class DateCode {
     public static String toMyDate(String date) {
         String todayInString = date.substring(0, 6);
         todayInString = todayInString.replace("月", "-");
-        todayInString = todayInString.replace("日", "-");
+        todayInString = todayInString.replace("日", "");
         LocalDate today = LocalDate.now();
         return today.getYear() + "-" + todayInString;
     }
