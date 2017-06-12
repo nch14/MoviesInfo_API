@@ -5,6 +5,7 @@ import cn.chenhaonee.movies.domian.CinemaMovieItem;
 import cn.chenhaonee.movies.domian.Cinemas;
 import cn.chenhaonee.movies.domian.CityArea;
 import cn.chenhaonee.movies.service.CinemaService;
+import cn.chenhaonee.movies.service.DateCode;
 import cn.chenhaonee.movies.vo.ResponseData;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -13,8 +14,10 @@ import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.format.TextStyle;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * Created by chenhaonee on 2017/6/9.
@@ -23,7 +26,7 @@ import java.util.List;
 @Api(value = "影院信息", description = "")
 @RequestMapping(value = "/cinema")
 @RestController
-public class CinameController {
+public class CinemaController {
 
     @Autowired
     private CinemaService cinemaService;
@@ -34,10 +37,16 @@ public class CinameController {
         LocalDate today = LocalDate.now();
         List<String> days = new ArrayList<>();
         for (int i = 0; i < 7; i++) {
-            String dateInString = today.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-            days.add(dateInString);
+            String dateInString = today.format(DateTimeFormatter.ofPattern("yyyy年MM月dd日"));
+            dateInString = dateInString.substring(5);
+            String weekDay = today.getDayOfWeek().getDisplayName(TextStyle.SHORT, Locale.CHINESE);
+            weekDay = weekDay.replace("星期", "周");
+            days.add(dateInString + "（" + weekDay + "）");
             today = today.plusDays(1);
         }
+        String todayInString = days.remove(0);
+        todayInString = todayInString.substring(0, 6) + "（今天）";
+        days.add(0, todayInString);
         return new ResponseData<>(days);
     }
 
@@ -54,7 +63,8 @@ public class CinameController {
     public ResponseData<List<Cinemas>> getCinemaList(@RequestParam(value = "movieId") String movieId,
                                                      @RequestParam(value = "date") String date,
                                                      @RequestParam(value = "areaId") String areaId) {
-        List<Cinemas> cinemas = cinemaService.getCinemaList(movieId, date, areaId);
+        String dateDecoded = DateCode.toMyDate(date);
+        List<Cinemas> cinemas = cinemaService.getCinemaList(movieId, dateDecoded, areaId);
         return new ResponseData<>(cinemas);
     }
 
@@ -63,7 +73,8 @@ public class CinameController {
     public ResponseData<List<CinemaMovieItem>> getMovieItemList(@RequestParam(value = "movieId") String movieId,
                                                                 @RequestParam(value = "date") String date,
                                                                 @RequestParam(value = "cinemaId") String cinemaId) {
-        List<CinemaMovieItem> cinemas = cinemaService.getMovieItemList(movieId, date, cinemaId);
+        String dateDecoded = DateCode.toMyDate(date);
+        List<CinemaMovieItem> cinemas = cinemaService.getMovieItemList(movieId, dateDecoded, cinemaId);
         return new ResponseData<>(cinemas);
     }
 
