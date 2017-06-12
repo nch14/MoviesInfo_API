@@ -8,19 +8,19 @@ public class Movies {
     private String name;
     private String marksInNuomi;
     private String marksInMaoyan;
-    private String marksInTaopiaopiao;    private String des;
+    private String marksInTaopiaopiao;
+    private String des;
     private String director;
     private String roles;
     private String country;
     private String length;
     private String time;
     private String content;
-
+    private String url;
     public Movies() {
     }
 
-    public Movies(String id, String name, String marksInNuomi, String marksInMaoyan, String marksInTaopiaopiao, String des, String director, String roles, String country, String length, String time, String content) {
-
+    public Movies(String id, String name, String marksInNuomi, String marksInMaoyan, String marksInTaopiaopiao, String des, String director, String roles, String country, String length, String time, String content, String url) {
         this.id = id;
         this.name = name;
         this.marksInNuomi = marksInNuomi;
@@ -33,6 +33,7 @@ public class Movies {
         this.length = length;
         this.time = time;
         this.content = content;
+        this.url = url;
     }
 
     public String getId() {
@@ -129,5 +130,13 @@ public class Movies {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }
