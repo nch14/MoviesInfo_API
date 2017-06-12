@@ -228,9 +228,9 @@ public class NuomiDao {
         String version = (String) item.get("version");
 //String startAt, String endAt, String language, String roomName, String seatsNow, String priceInNuomi, String priceInMaoyan, String priceInTaopiaopiao
 
-        SimpleDateFormat sdf = new SimpleDateFormat("mm-DD HH:mm");
-        String startAt = sdf.format(new Date(startTime));
-        String endAt = sdf.format(new Date(endTime));
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        String startAt = sdf.format(new Date(startTime)).substring(5);
+        String endAt = sdf.format(new Date(endTime)).substring(5);
 
         CinemaMovieItem cinemaMovieItem = new CinemaMovieItem(startAt, endAt, language, theaterName, "" + rate, totalSeatNumber, remainedSeatNumber, version, "" + price, "" + originalPrice, null, null, null, null);
         return cinemaMovieItem;
