@@ -176,7 +176,7 @@ public class NuomiDao {
             String length = item.getString("length");
             String time = item.getString("time");
             String content = item.getString("content");
-            Movies movies = new Movies(null, name, marks, null, null, des, director, roles, country, length, time, content);
+            Movies movies = new Movies(null, name, marks, null, null, des, director, roles, country, length, time, content,"");
             return movies;
         }
         return null;
