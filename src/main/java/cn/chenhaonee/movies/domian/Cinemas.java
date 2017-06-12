@@ -8,16 +8,17 @@ public class Cinemas {
     private String name;
     private String address;
     private String lowestPrice;
+    private String tel;
 
     public Cinemas() {
     }
 
-    public Cinemas(String id, String name, String address, String lowestPrice) {
-
+    public Cinemas(String id, String name, String address, String lowestPrice, String tel) {
         this.id = id;
         this.name = name;
         this.address = address;
         this.lowestPrice = lowestPrice;
+        this.tel = tel;
     }
 
     public String getId() {
@@ -52,4 +53,11 @@ public class Cinemas {
         this.lowestPrice = lowestPrice;
     }
 
+    public String getTel() {
+        return tel;
+    }
+
+    public void setTel(String tel) {
+        this.tel = tel;
+    }
 }
