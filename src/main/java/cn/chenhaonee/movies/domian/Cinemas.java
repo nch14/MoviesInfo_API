@@ -7,21 +7,17 @@ public class Cinemas {
     private String id;
     private String name;
     private String address;
-    private String lowestPriceInNuomi;
-    private String lowestPriceInMaoyan;
-    private String lowestPriceInTaopiaopiao;
+    private String lowestPrice;
 
     public Cinemas() {
     }
 
-    public Cinemas(String id, String name, String address, String lowestPriceInNuomi, String lowestPriceInMaoyan, String lowestPriceInTaopiaopiao) {
+    public Cinemas(String id, String name, String address, String lowestPrice) {
 
         this.id = id;
         this.name = name;
         this.address = address;
-        this.lowestPriceInNuomi = lowestPriceInNuomi;
-        this.lowestPriceInMaoyan = lowestPriceInMaoyan;
-        this.lowestPriceInTaopiaopiao = lowestPriceInTaopiaopiao;
+        this.lowestPrice = lowestPrice;
     }
 
     public String getId() {
@@ -48,27 +44,12 @@ public class Cinemas {
         this.address = address;
     }
 
-    public String getLowestPriceInNuomi() {
-        return lowestPriceInNuomi;
+    public String getLowestPrice() {
+        return lowestPrice;
     }
 
-    public void setLowestPriceInNuomi(String lowestPriceInNuomi) {
-        this.lowestPriceInNuomi = lowestPriceInNuomi;
+    public void setLowestPrice(String lowestPrice) {
+        this.lowestPrice = lowestPrice;
     }
 
-    public String getLowestPriceInMaoyan() {
-        return lowestPriceInMaoyan;
-    }
-
-    public void setLowestPriceInMaoyan(String lowestPriceInMaoyan) {
-        this.lowestPriceInMaoyan = lowestPriceInMaoyan;
-    }
-
-    public String getLowestPriceInTaopiaopiao() {
-        return lowestPriceInTaopiaopiao;
-    }
-
-    public void setLowestPriceInTaopiaopiao(String lowestPriceInTaopiaopiao) {
-        this.lowestPriceInTaopiaopiao = lowestPriceInTaopiaopiao;
-    }
 }

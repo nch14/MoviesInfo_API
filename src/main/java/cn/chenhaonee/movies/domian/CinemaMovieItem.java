@@ -10,22 +10,28 @@ public class CinemaMovieItem {
     private String roomName;
     private String seatsNow;
     private String priceInNuomi;
+    private String priceOriginInNuomi;
+
     private String priceInMaoyan;
+    private String priceOriginInMaoyan;
     private String priceInTaopiaopiao;
+    private String priceOriginInTaopiaopiao;
 
     public CinemaMovieItem() {
     }
 
-    public CinemaMovieItem(String startAt, String endAt, String language, String roomName, String seatsNow, String priceInNuomi, String priceInMaoyan, String priceInTaopiaopiao) {
-
+    public CinemaMovieItem(String startAt, String endAt, String language, String roomName, String seatsNow, String priceInNuomi, String priceOriginInNuomi, String priceInMaoyan, String priceOriginInMaoyan, String priceInTaopiaopiao, String priceOriginInTaopiaopiao) {
         this.startAt = startAt;
         this.endAt = endAt;
         this.language = language;
         this.roomName = roomName;
         this.seatsNow = seatsNow;
         this.priceInNuomi = priceInNuomi;
+        this.priceOriginInNuomi = priceOriginInNuomi;
         this.priceInMaoyan = priceInMaoyan;
+        this.priceOriginInMaoyan = priceOriginInMaoyan;
         this.priceInTaopiaopiao = priceInTaopiaopiao;
+        this.priceOriginInTaopiaopiao = priceOriginInTaopiaopiao;
     }
 
     public String getStartAt() {
@@ -91,5 +97,29 @@ public class CinemaMovieItem {
 
     public void setPriceInTaopiaopiao(String priceInTaopiaopiao) {
         this.priceInTaopiaopiao = priceInTaopiaopiao;
+    }
+
+    public String getPriceOriginInNuomi() {
+        return priceOriginInNuomi;
+    }
+
+    public void setPriceOriginInNuomi(String priceOriginInNuomi) {
+        this.priceOriginInNuomi = priceOriginInNuomi;
+    }
+
+    public String getPriceOriginInMaoyan() {
+        return priceOriginInMaoyan;
+    }
+
+    public void setPriceOriginInMaoyan(String priceOriginInMaoyan) {
+        this.priceOriginInMaoyan = priceOriginInMaoyan;
+    }
+
+    public String getPriceOriginInTaopiaopiao() {
+        return priceOriginInTaopiaopiao;
+    }
+
+    public void setPriceOriginInTaopiaopiao(String priceOriginInTaopiaopiao) {
+        this.priceOriginInTaopiaopiao = priceOriginInTaopiaopiao;
     }
 }
