@@ -17,10 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -202,7 +199,7 @@ public class NuomiDao {
             String price = (String) item.get("price");
             String address = (String) item.get("address");
 
-            Cinemas cinemas = new Cinemas(cinemaId, name, address, price,"暂无数据");
+            Cinemas cinemas = new Cinemas(cinemaId, name, address, price, "暂无数据");
             return cinemas;
         }
         return null;
@@ -217,9 +214,9 @@ public class NuomiDao {
 
         String language = (String) item.get("language");
 
-        int price = (int) item.get("price");
-        int memCardPrice = (int) item.get("memCardPrice");
-        int originalPrice = (int) item.get("originalPrice");
+        double price = (double) item.get("price");
+        double memCardPrice = (double) item.get("memCardPrice");
+        double originalPrice = (double) item.get("originalPrice");
 
         long startTime = (long) item.get("startTime");
         long endTime = (long) item.get("endTime");
